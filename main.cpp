@@ -98,129 +98,170 @@ using namespace std;
 //----------------------------------------------------------
 
 
-//문자열 갯수 세기
+////문자열 갯수 세기
+//
+//int CountLength(char* HAPPY)
+//{
+//	int count = 0;
+//
+//	for (;;)
+//	{
+//		if (HAPPY[count] == 0)
+//		{
+//			return count;
+//		}
+//		count++;
+//	}
+//}
+//
+//
+//
+////문자열 중에서 특정 문자 위치 찾기
+//
+//int FindPosition(char* HAPPY, char target)
+//{
+//	int i = 0;
+//	while (HAPPY[i] != '\0')
+//	{
+//		if (HAPPY[i] == target)
+//		{
+//			return i; 
+//		}
+//		i++;
+//	}
+//	return -1;
+//}
+//
+////문자열 중에서 특정 문자를 특정문 바꾸기
+//
+//
+//void Change(char* HAPPY, int index, char newChar)
+//{
+//	
+//	if (index < CountLength(HAPPY)&&index >=0)
+//	{
+//		HAPPY[index] = newChar;
+//	}
+//}
+//
+//
+//
+//
+//int main()
+//{
+//
+//	char HAPPY[6] = { 'H','A','P','P','Y','\0' };
+//	char* S = HAPPY;
+//
+//
+//
+//	//문자열 갯수
+//	cout << S << endl;
+//	cout << "문자열 갯수: " << CountLength(HAPPY) << endl;
+//
+//
+//	//문자열 찾기
+//
+//
+//	char target;
+//	cout << "찾을 문자를 입력하세요: ";
+//	cin >> target;
+//
+//	int Pos = FindPosition(S, target);
+//
+//	if (Pos != -1)
+//	{
+//		cout << "'" << target << "' 문자는 " << Pos << "번 인덱스" << endl;
+//	}
+//	else
+//	{
+//		cout << "찾을 수 없음" << endl;
+//	}
+//
+//	//문자열 바꾸기
+//
+//	Change(S, 2, 'A');
+//	cout << S << endl;
+//
+//
+//	return 0;
+//}
 
-int CountLength(char* HAPPY)
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------
+//강사님 코드
+
+
+void Allocate()
 {
-	int count = 0;
-
 	for (;;)
 	{
-		if (HAPPY[count] == 0)
-		{
-			return count;
-		}
-		count++;
+		int* P = new int;
 	}
 }
-
-
-
-//문자열 중에서 특정 문자 위치 찾기
-
-int FindPosition(char* HAPPY, char target)
-{
-	int i = 0;
-	while (HAPPY[i] != '\0')
-	{
-		if (HAPPY[i] == target)
-		{
-			return i; 
-		}
-		i++;
-	}
-	return -1;
-}
-
-//문자열 중에서 특정 문자를 특정문 바꾸기
-
-
-void Change(char* HAPPY, int index, char newChar)
-{
-	
-	if (index < CountLength(HAPPY)&&index >=0)
-	{
-		HAPPY[index] = newChar;
-	}
-}
-
-
 
 
 int main()
 {
+	//int A = 10;
+	//char Temp[100] = "Hello World";
 
-	char HAPPY[6] = { 'H','A','P','P','Y','\0' };
-	char* S = HAPPY;
+	//int StringLength = Length(Temp, 100);
+	//cout << StringLength << endl;
+
+	//Replace(Temp, 100, 'l', 'f');
+
+	//cout << Temp << endl;
+	//------------------------------
+	//int* P= new int;//새로운공간을 만들어달라
+	////이렇게 하면 주소가 저장이된다. 
+
+	//delete P;
+	//P = nullptr; //유효하지 않으니까 가리키는게 없다고 적어주는 것,
 
 
+	//computer memory unmanaged language
+	//heap 동적으로 int
+	//사이즈 만들고 주소 반환
+	int* MyTexture = new int;
 
-	//문자열 갯수
-	cout << S << endl;
-	cout << "문자열 갯수: " << CountLength(HAPPY) << endl;
-
-
-	//문자열 찾기
-
-
-	char target;
-	cout << "찾을 문자를 입력하세요: ";
-	cin >> target;
-
-	int Pos = FindPosition(S, target);
-
-	if (Pos != -1)
+	//포인터 변수의 주소의 heap 영역 반환
+	delete MyTexture;
+	if (MyTexture) //뭐가 연결 되어있으면 사용해라.
 	{
-		cout << "'" << target << "' 문자는 " << Pos << "번 인덱스" << endl;
+
 	}
-	else
+
+	int Size = 100;
+	//heap 동적으로 int100개짜리 배열 사이즈 만들고 주소반환
+	int* MyStaticMeshes = new int[Size];
+
+	MyStaticMeshes[3] = 10;
+
+	//포인터 변수의 주소부터 할당받은 배열 크기 만큼의 heap 영역
+	//delete MyStaticMeshes; 첫번째만 반환하고 나머지는 잊어버린다는것. 그러니 [ ] 꼭 붙이기
+	delete[] MyStaticMeshes;
+	MyStaticMeshes = nullptr;
+	if (MyStaticMeshes)
 	{
-		cout << "찾을 수 없음" << endl;
+
 	}
-
-	//문자열 바꾸기
-
-	Change(S, 2, 'A');
-	cout << S << endl;
-
 
 	return 0;
 }
 
 
-//----------------------------
-//강사님 코드
-//int Length(char* String, int Size)
-//{
-//	for(int i=0; i>Size; i++)
-//	if (String[i] == 0)
-//	{
-//		return i;
-//	}
-//	return Size;
-//}
-//
-//
-//void Replace(char* String, int Size, char FindCharacter, char ReplaceCharacter)
-//{
-//
-//}
-//
-//int main()
-//{
-//	int A = 10;
-//	char Temp[100] = "Hello World";
-//
-//	int StringLength = Length(Temp, 100);
-//	cout << StringLength << endl;
-//
-//	Replace(Temp, 100, 'l', 'f');
-//
-//	cout << Temp << endl;
-//
-//	return 0;
-//}
-//
-//
+
 
 
