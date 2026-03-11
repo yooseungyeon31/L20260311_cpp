@@ -202,14 +202,14 @@ using namespace std;
 //----------------------------
 //강사님 코드
 
-
-void Allocate()
-{
-	for (;;)
-	{
-		int* P = new int;
-	}
-}
+//
+//void Allocate()
+//{
+//	for (;;)
+//	{
+//		int* P = new int;
+//	}
+//}
 
 
 int main()
@@ -231,32 +231,64 @@ int main()
 	//P = nullptr; //유효하지 않으니까 가리키는게 없다고 적어주는 것,
 
 
-	//computer memory unmanaged language
-	//heap 동적으로 int
-	//사이즈 만들고 주소 반환
-	int* MyTexture = new int;
 
-	//포인터 변수의 주소의 heap 영역 반환
-	delete MyTexture;
-	if (MyTexture) //뭐가 연결 되어있으면 사용해라.
+	//---------------
+	//이게 중요하다!!!
+	////computer memory unmanaged language
+	////heap 동적으로 int
+	////사이즈 만들고 주소 반환
+	//int* MyTexture = new int;
+
+	////포인터 변수의 주소의 heap 영역 반환
+	//delete MyTexture;
+	//if (MyTexture) //뭐가 연결 되어있으면 사용해라.
+	//{
+
+	//}
+
+	//int Size = 100;
+	////heap 동적으로 int100개짜리 배열 사이즈 만들고 주소반환
+	//int* MyStaticMeshes = new int[Size];
+
+	//MyStaticMeshes[3] = 10;
+
+	////포인터 변수의 주소부터 할당받은 배열 크기 만큼의 heap 영역
+	////delete MyStaticMeshes; 첫번째만 반환하고 나머지는 잊어버린다는것. 그러니 [ ] 꼭 붙이기
+	//delete[] MyStaticMeshes;
+	//MyStaticMeshes = nullptr;
+	//if (MyStaticMeshes)
+	//{
+
+	//}
+	//---------------
+	//ctrl rr 누르면 똑같은 단어 다 대문자로 만들 수 있음!
+	//과제 ----------------------------------------------------------
+	// 숫자 입력 받아서 그걸 (SIZE)크기로 숫자배열을 만들어서
+	// 1부터 크기까지 초기화하고 출력하는 프로그램 만들어 보세요.
+	int Size = 0;
+
+	//숫자 입력 받기
+	cout << "숫자를 입력하세요: " << Size << endl;
+	cin >> Size;
+
+	//숫자 배열 만들기
+	int* Arr = new int[Size];
+
+
+	for (int i = 0; i < Size; i++)
 	{
-
+		Arr[i] = i + 1;
 	}
 
-	int Size = 100;
-	//heap 동적으로 int100개짜리 배열 사이즈 만들고 주소반환
-	int* MyStaticMeshes = new int[Size];
-
-	MyStaticMeshes[3] = 10;
-
-	//포인터 변수의 주소부터 할당받은 배열 크기 만큼의 heap 영역
-	//delete MyStaticMeshes; 첫번째만 반환하고 나머지는 잊어버린다는것. 그러니 [ ] 꼭 붙이기
-	delete[] MyStaticMeshes;
-	MyStaticMeshes = nullptr;
-	if (MyStaticMeshes)
+	for (int i = 0; i < Size; i++)
 	{
-
+		cout << Arr[i] << " ";
 	}
+	cout << endl;
+
+
+	delete[] Arr;
+	Arr = nullptr;
 
 	return 0;
 }
