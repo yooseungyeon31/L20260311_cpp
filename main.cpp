@@ -272,7 +272,12 @@ int main()
 	cin >> Size;
 
 	//숫자 배열 만들기
-	int* Arr = new int[Size];
+	int* Arr = new int[Size]; //heap배열을 size크기 만큼 int, 시작 번지(int*)
+	//Arr = new int[Size];
+	//if(!Arr) //if ( P == nullptr), if(P==0) 이랑 같은 의미다.
+	//{
+	//	return -1;
+	//}
 
 
 	for (int i = 0; i < Size; i++)
@@ -282,17 +287,16 @@ int main()
 
 	for (int i = 0; i < Size; i++)
 	{
-		cout << Arr[i] << " ";
+		cout << Arr[i] << ", ";
 	}
 	cout << endl;
 
-
+	//heap 에 있는 배열을 반환해주세요
 	delete[] Arr;
 	Arr = nullptr;
 
 	return 0;
 }
-
 
 
 
