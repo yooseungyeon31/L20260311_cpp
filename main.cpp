@@ -74,7 +74,7 @@ using namespace std;
 
 	//----------------------------------------------------
 
-
+//내가 연습한 예제
 	//char Hello[6] = { 'H','e','l','l','o','\0' };
 
 	//char* C = Hello;
@@ -224,6 +224,7 @@ int main()
 
 	//cout << Temp << endl;
 	//------------------------------
+	
 	//int* P= new int;//새로운공간을 만들어달라
 	////이렇게 하면 주소가 저장이된다. 
 
@@ -234,9 +235,12 @@ int main()
 
 	//---------------
 	//이게 중요하다!!!
-	////computer memory unmanaged language
-	////heap 동적으로 int
-	////사이즈 만들고 주소 반환
+	//computer memory unmanaged language
+	//heap 동적으로 int
+	//사이즈 만들고 주소 반환
+	
+	
+	//
 	//int* MyTexture = new int;
 
 	////포인터 변수의 주소의 heap 영역 반환
@@ -260,7 +264,15 @@ int main()
 	//{
 
 	//}
-	//---------------
+	//
+
+
+
+
+
+
+
+	//------------------------
 	//ctrl rr 누르면 똑같은 단어 다 대문자로 만들 수 있음!
 	//과제 ----------------------------------------------------------
 	// 숫자 입력 받아서 그걸 (SIZE)크기로 숫자배열을 만들어서
@@ -273,6 +285,8 @@ int main()
 
 	//숫자 배열 만들기
 	int* Arr = new int[Size]; //heap배열을 size크기 만큼 int, 시작 번지(int*)
+
+	//int* Arr = nullptr; //배열을 비워둔다.
 	//Arr = new int[Size];
 	//if(!Arr) //if ( P == nullptr), if(P==0) 이랑 같은 의미다.
 	//{
